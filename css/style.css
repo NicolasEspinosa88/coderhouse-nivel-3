@@ -1,7 +1,7 @@
 @import url(http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
 @import url(https://fonts.googleapis.com/css?family=Oswald:300,400);
 @import url(http://fonts.googleapis.com/css?family=Architects+Daughter);
-.snip1423 {
+.product-card {
   font-family: 'Oswald', Arial, sans-serif;
   position: relative;
   float: left;
@@ -20,47 +20,47 @@
   -webkit-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
 }
-.snip1423 * {
+.product-card * {
   -webkit-box-sizing: padding-box;
   box-sizing: padding-box;
   -webkit-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
 }
-.snip1423 img {
+.product-card img {
   max-width: 100%;
   vertical-align: top;
   position: relative;
 }
-.snip1423 figcaption {
+.product-card figcaption {
   padding: 20px 15px;
 }
-.snip1423 h3,
-.snip1423 p {
+.product-card h3,
+.product-card p {
   margin: 0;
 }
-.snip1423 h3 {
+.product-card h3 {
   font-size: 1.3em;
   font-weight: 400;
   margin-bottom: 5px;
   text-transform: uppercase;
 }
-.snip1423 p {
+.product-card p {
   font-size: 0.9em;
   letter-spacing: 1px;
   font-weight: 300;
 }
-.snip1423 .price {
+.product-card .price {
   font-weight: 500;
   font-size: 1.4em;
   line-height: 48px;
   letter-spacing: 1px;
 }
-.snip1423 .price s {
+.product-card .price s {
   margin-right: 5px;
   opacity: 0.5;
   font-size: 0.9em;
 }
-.snip1423 i {
+.product-card i {
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -75,72 +75,86 @@
   font-size: 1.6em;
   border: 4px solid #ffffff;
 }
-.snip1423 a {
-  position: absolute;
+.product-card a {
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   z-index: 1;
 }
-.snip1423:hover,
-.snip1423.hover {
+.product-card:hover,
+.product-card.hover {
   -webkit-transform: translateY(-5px);
   transform: translateY(-5px);
 }
-.snip1423:hover i,
-.snip1423.hover i {
+.product-card:hover i,
+.product-card.hover i {
   background-color: #2980b9;
 }
 /* Demo purposes only */
 body {
   background-color: #212121;
 }
-hearts {
-  position: relative;
-  display: inline-block;
-  height: 40px;
-  width: 200px;
-  overflow: hidden;
-}
-hearts label {
-  position: relative;
+.right {
   float: right;
-  height: 30px;
-  width: 30px;
-  margin: 5px;
-  box-sizing: border-box;
+}
+
+.left {
+  float: left;
+}
+
+
+.rating .stars {
+  margin-right: 15px;
+}
+
+.rating .stars .star {
+  float: left;
+  padding: 5px 2px;
   cursor: pointer;
 }
-hearts label:hover:before, hearts label:hover:after, hearts label:hover ~ label:before, hearts label:hover ~ label:after {
-  background: #555;
+
+.rating .stars .star:before {
+  font-family: 'FontAwesome';
+  content: '\f005';
+  color: #d0e8f0;
+  font-size: 28px;
 }
-hearts label:before, hearts label:after {
-  position: absolute;
-  top: -5px;
-  left: 6px;
-  content: '';
-  display: block;
-  height: 30px;
-  width: 17.14286px;
-  background: #333;
-  border-radius: 17.14286px 17.14286px 0 0;
-  -webkit-transform-origin: 50% 72.5%;
-          transform-origin: 50% 72.5%;
+
+.rating .stars .star:hover:before,
+.rating .stars .star.to_rate:before,
+.rating .stars .star.rated:before {
+  color: #80c1d5;
 }
-hearts label:before {
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
+
+.rating .stars .star.no_to_rate:before {
+  color: #d0e8f0;
 }
-hearts label:after {
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
+
+.rating-destacado .stars-destacado .star:before{
+  font-size: 15px;
 }
-hearts input {
-  position: absolute;
-  top: 0;
-  left: -64px;
+
+.destacados{
+  background-color: #fff;
 }
-hearts input:checked ~ label:before, hearts input:checked ~ label:after {
-  background: #d31;
+.destacados--container{
+
+  display: inline-block;
+  margin: auto;
+}
+.destacado{
+
+  display: inherit;
+  border: 1px solid black;
+  background-color:#000;
+  color: #fff;
+  padding: 5px;
+  text-align: center;
+  width: 200px;
+  height: 250px;
+  margin-bottom: 10px;
+}
+.destacado--img{
+  width: 100%;
 }
