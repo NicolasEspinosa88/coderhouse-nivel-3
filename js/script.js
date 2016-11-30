@@ -22,6 +22,24 @@ jQuery(document).ready(function($) {
   angular .module('My-App',[])// declarando una aplicacion
           .controller('ListProductController', function($scope){
             $scope.title = 'Lista de Productos';
+
+            $scope.products = [
+              {
+                id:1,
+                title:'asdfsdf1',
+                image: 'asdfasdfsadf',
+                precio: 4000,
+                description:'asdfasdf asdf sadf ;lkjasdf l;ksadfj  sad;lkfjsad;flkasjdf'  
+              },
+              {
+                id:2,
+                title:'asdfsdf2',
+                image: 'asdfasdfsadf',
+                precio: 14000,
+                description:'asdfasdf asdf sadf ;lkjasdf l;ksadfj  sad;lkfjsad;flkasjdf'  
+              }
+
+            ]
             
           })
           .controller('NavigationController', function($scope){
@@ -33,16 +51,20 @@ jQuery(document).ready(function($) {
           })
           .controller('ProductDetail',function($scope){
 
-            $scope.title = 'asdfasdfasdfasdf'
-            $scope.description = 'asdfasdfasdf sadfa sdfasd fasdf asdf asdf ';
-            $scope.imagen1 = 'http://loremflickr.com/320/240?random=1';
-            $scope.imagen2 = 'http://loremflickr.com/320/240?random=2';
-            $scope.imagen3 = 'http://loremflickr.com/320/240?random=3';
-            $scope.imagen4 = 'http://loremflickr.com/320/240?random=4';
-            $scope.imagen5 = 'http://loremflickr.com/320/240?random=5';
-            $scope.price = 400;
-            $scope.date = '30/11/2016';
-            $scope.rating = 0;
+            
+            $scope.product ={
+              title : 'asdfasdfasdfasdf',
+              description : 'asdfasdfasdf sadfa sdfasd fasdf asdf asdf ',
+              imagen1 : 'http://loremflickr.com/320/240?random=1',
+              imagen2 : 'http://loremflickr.com/320/240?random=2',
+              imagen3 : 'http://loremflickr.com/320/240?random=3',
+              imagen4 : 'http://loremflickr.com/320/240?random=4',
+              imagen5 : 'http://loremflickr.com/320/240?random=5',
+              price : 400,
+              date : '30/11/2016',
+              rating : 0,
+              featured: true
+            }
           })
 
 
