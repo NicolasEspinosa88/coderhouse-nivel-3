@@ -1,6 +1,4 @@
-@import url(http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
-@import url(https://fonts.googleapis.com/css?family=Oswald:300,400);
-@import url(http://fonts.googleapis.com/css?family=Architects+Daughter);
+
 .product-card {
   font-family: 'Oswald', Arial, sans-serif;
   position: relative;
@@ -92,9 +90,9 @@
   background-color: #2980b9;
 }
 /* Demo purposes only */
-body {
+/*body {
   background-color: #212121;
-}
+}*/
 .right {
   float: right;
 }
@@ -118,7 +116,7 @@ body {
   font-family: 'FontAwesome';
   content: '\f005';
   color: #d0e8f0;
-  font-size: 28px;
+  font-size: 23px;
 }
 
 .rating .stars .star:hover:before,
@@ -157,4 +155,102 @@ body {
 }
 .destacado--img{
   width: 100%;
+}
+
+
+:root {
+  --left: 0;
+  --aspectRatio: .6625;
+  --slide: 0;
+  --slideWidth: 500px;
+  --slideHeight: calc(var(--slideWidth) * var(--aspectRatio));
+  --slidesVisible: 1;
+}
+
+#slides_container {
+  background: #2a2a2a;
+  border: 2px solid #fff;
+  height: var(--slideHeight);
+  line-height: var(--slideHeight);
+  margin: 20px auto;
+  overflow: hidden;
+  position: relative;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  width: calc(var(--slideWidth) * var(--slidesVisible));
+}
+
+#slides {
+  font-size: 0;
+  height: 100%;
+  -webkit-transform: translate3d(calc(var(--slide) * var(--slideWidth) * -1), 0, 0);
+          transform: translate3d(calc(var(--slide) * var(--slideWidth) * -1), 0, 0);
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
+  white-space: nowrap;
+}
+
+.slide {
+  background-position: center;
+  background-size: cover;
+  display: inline-block;
+  font-size: 60px;
+  height: 100%;
+  text-align: center;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  width: var(--slideWidth);
+}
+
+#slides_controls {
+  margin: 20px auto;
+  text-align: center;
+  width: 500px;
+}
+#slides_controls label {
+  background-position: center;
+  background-size: cover;
+  border: 2px solid #fff;
+  cursor: pointer;
+  display: inline-block;
+  height: 50px;
+  margin: 0 10px 10px;
+  overflow: hidden;
+  width: 50px;
+}
+#slides_controls input {
+  left: -100%;
+  position: absolute;
+}
+
+#slide_width,
+#slides_visible {
+  display: block;
+  font-size: 20px;
+  margin: 10px auto;
+}
+
+#slide_options {
+  font-size: 0;
+  margin: 20px auto;
+  text-align: center;
+  width: 400px;
+}
+#slide_options .left,
+#slide_options .right {
+  display: inline-block;
+  width: 50%;
+}
+#slide_options input {
+  width: 90%;
+}
+
+
+.product-detail{
+  margin-top:50px;
+}
+
+.formulario{
+  margin:200px auto;
+  width: 60%;
 }
