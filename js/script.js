@@ -12,27 +12,38 @@ jQuery(document).ready(function($) {
     $(this).parent().find('.star:gt(' + $(this).index() + ')').removeClass('no_to_rate').removeClass('rated');
     /*Save your rate*/
     /*TODO*/
-    });
-  var $slides = document.querySelector('#slides');
-  var $slidesControls = Array.from(document.querySelectorAll('#slides_controls input'));
-  var $slideWidth = document.querySelector('#slide_width');
-  var $slidesVisible = document.querySelector('#slides_visible');
-
-
-  $slidesControls.forEach(function (element, index) {
-    element.addEventListener('change', function () {
-      document.documentElement.style.setProperty('--slide', index);
-    });
-  });
-
-  $slideWidth.addEventListener('keyup', function (e) {
-    if (e.keyCode == 13) {
-      document.documentElement.style.setProperty('--slideWidth', this.value + 'px');
-    }
-  });
-
-  $slidesVisible.addEventListener('input', function () {
-    document.documentElement.style.setProperty('--slidesVisible', this.value);
-  });
+    })
 });
 
+
+// IIFE
+(function(){
+  'use strict';
+  angular .module('My-App',[])// declarando una aplicacion
+          .controller('ListProductController', function($scope){
+            $scope.title = 'Lista de Productos';
+            
+          })
+          .controller('NavigationController', function($scope){
+
+          })
+          .controller('FeaturedProductController', function($scope){
+            $scope.title = 'Productos Destacados';
+
+          })
+          .controller('ProductDetail',function($scope){
+
+            $scope.title = 'asdfasdfasdfasdf'
+            $scope.description = 'asdfasdfasdf sadfa sdfasd fasdf asdf asdf ';
+            $scope.imagen1 = 'http://loremflickr.com/320/240?random=1';
+            $scope.imagen2 = 'http://loremflickr.com/320/240?random=2';
+            $scope.imagen3 = 'http://loremflickr.com/320/240?random=3';
+            $scope.imagen4 = 'http://loremflickr.com/320/240?random=4';
+            $scope.imagen5 = 'http://loremflickr.com/320/240?random=5';
+            $scope.price = 400;
+            $scope.date = '30/11/2016';
+            $scope.rating = 0;
+          })
+
+
+})();
