@@ -12,8 +12,32 @@ jQuery(document).ready(function($) {
     $(this).parent().find('.star:gt(' + $(this).index() + ')').removeClass('no_to_rate').removeClass('rated');
     /*Save your rate*/
     /*TODO*/
-    })
+    });
 });
+
+var $slides = document.querySelector('#slides');
+  if($slides !== null){
+    var $slidesControls = Array.from(document.querySelectorAll('#slides_controls input'));
+    var $slideWidth = document.querySelector('#slide_width');
+    var $slidesVisible = document.querySelector('#slides_visible');
+
+
+    $slidesControls.forEach(function (element, index) {
+      element.addEventListener('change', function () {
+        document.documentElement.style.setProperty('--slide', index);
+      });
+    });
+
+    $slideWidth.addEventListener('keyup', function (e) {
+      if (e.keyCode == 13) {
+        document.documentElement.style.setProperty('--slideWidth', this.value + 'px');
+      }
+    });
+
+    $slidesVisible.addEventListener('input', function () {
+      document.documentElement.style.setProperty('--slidesVisible', this.value);
+    });
+  }
 
 
 // IIFE
@@ -27,20 +51,18 @@ jQuery(document).ready(function($) {
               {
                 id:1,
                 title:'asdfsdf1',
-                image: 'asdfasdfsadf',
+                image: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample57.jpg',
                 precio: 4000,
-                description:'asdfasdf asdf sadf ;lkjasdf l;ksadfj  sad;lkfjsad;flkasjdf'  
+                description:'asdfasdf asdf sadf ;lkjasdf l;ksadfj  sad;lkfjsad;flkasjdf'
               },
               {
                 id:2,
                 title:'asdfsdf2',
-                image: 'asdfasdfsadf',
+                image: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample57.jpg',
                 precio: 14000,
-                description:'asdfasdf asdf sadf ;lkjasdf l;ksadfj  sad;lkfjsad;flkasjdf'  
+                description:'asdfasdf asdf sadf ;lkjasdf l;ksadfj  sad;lkfjsad;flkasjdf'
               }
-
-            ]
-            
+            ];
           })
           .controller('NavigationController', function($scope){
 
@@ -48,10 +70,33 @@ jQuery(document).ready(function($) {
           .controller('FeaturedProductController', function($scope){
             $scope.title = 'Productos Destacados';
 
+            $scope.featuredProducts=[
+              {
+                id:1,
+                title:'alalalallala 1',
+                imagen:'https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample98.jpg',
+                precio:300,
+                rate:2
+              },
+              {
+                id:2,
+                title:'alalalallala 2',
+                imagen:'https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample98.jpg',
+                precio:1000,
+                rate:1
+              },
+              {
+                id:3,
+                title:'alalalallala 3',
+                imagen:'https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample98.jpg',
+                precio:560,
+                rate:5
+              }
+            ];
+
           })
           .controller('ProductDetail',function($scope){
 
-            
             $scope.product ={
               title : 'asdfasdfasdfasdf',
               description : 'asdfasdfasdf sadfa sdfasd fasdf asdf asdf ',
@@ -64,8 +109,6 @@ jQuery(document).ready(function($) {
               date : '30/11/2016',
               rating : 0,
               featured: true
-            }
-          })
-
-
+            };
+          });
 })();
