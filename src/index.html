@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Listado</title>
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body ng-app='My-app'>
+
+<div ng-controller='NavigationController'>
+	<div class="row">
+		<div class="col-md-12">
+			<nav class="nav-bar">
+				<a href="#" class="nav-item">Home</a>
+				<a href="#" class="nav-item">About</a>
+			</nav>
+		</div>
+	</div>
+</div>
+
+<!--VIEW -->
+		
+<div ng-controller='FeaturedProductController'>
+<section class="destacados">
+	<div class="container ">
+		<h2>{{ title }}</h2>
+		<div class="destacados--container">
+			<article class="destacado" ng-repeat="feature in featuredProducts">
+				<img class="destacado--img" ng-src="{{feature.imagen}}" alt="">
+				<div class="destacado--description">
+					<h4 class="destacado--title">{{feature.title}}</h4>
+					<div class="destacado--price">
+						${{feature.precio}}
+					</div>
+				</div>
+				<div class="rating rating-destacado">
+				  <div class="stars stars-destacado">
+				    <a class="star rated"></a>
+				    <a class="star rated"></a>
+				    <a class="star rated"></a>
+				    <a class="star"></a>
+				    <a class="star"></a>
+				  </div>
+				</div>
+			</article>
+		</div>
+	</div>
+</section>
+</div>
+
+<div ng-controller="ListProductController">
+	<section>
+		<div class="container">
+			<h2>{{ title }}</h2>
+			<figure class="product-card" ng-repeat="product in products">
+			  <img ng-src="{{ product.image }}" alt="sample57" />
+			  <figcaption>
+			    <h3>{{ product.title }}</h3>
+			    <div class="price">${{ product.precio }}</div>
+			  </figcaption>
+			  <div class="rating">
+				  <div class="stars">
+				    <a class="star rated"></a>
+				    <a class="star rated"></a>
+				    <a class="star rated"></a>
+				    <a class="star"></a>
+				    <a class="star"></a>
+				  </div>
+				</div>
+			</figure>
+		</div>
+	</section>
+</div>
+<!-- FIN VIEW -->
+
+</body>
+</html>
