@@ -1,6 +1,6 @@
 var app = require('../Myapp');
-
-app.controller('ListProductController', function($scope){
+var productList = require('../routes');
+app.controller('ListProductController', function($scope, productList){
 	$scope.title = 'Lista de Productos';
 
 	$scope.products = [

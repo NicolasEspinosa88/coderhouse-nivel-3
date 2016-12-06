@@ -13,9 +13,10 @@
   "author": "",
   "license": "BSD-2-Clause",
   "dependencies": {
-    "angular": "~1.5.8"
+    "angular": "~1.5.8",
+    "angular-ui-router": "~0.3.2"
   },
-    "devDependencies": {
+  "devDependencies": {
     "angular-mocks": "^1.5.0",
     "autoprefixer": "^6.0.3",
     "babel-core": "^6.2.1",
